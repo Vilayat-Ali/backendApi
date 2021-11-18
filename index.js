@@ -18,5 +18,6 @@ app.use(express.json());
 //route middleware
 app.use('/api1', subcRoutes, contactRoutes)
 
-app.listen(process.env.PORT, ()=>console.log(`server is running at ${process.env.PORT}`));
+// Usually PORT is a string in most environment variables. So it's a good practise to have a type casting mechanism which is negected when not required.
+app.listen(Number(process.env.PORT), ()=>console.log(`server is running at ${process.env.PORT}`));
 
